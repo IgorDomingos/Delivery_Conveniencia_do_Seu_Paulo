@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cardápio Digital - Conveniência do Seu Paulo</title>
-    <!-- Tailwind CSS via CDN para estilização rápida e responsiva -->
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
     <style>
         .modal { transition: opacity 0.25s ease; }
@@ -13,29 +12,19 @@
 </head>
 <body class="text-gray-800 min-h-screen pb-24">
 
-    <!-- Header com a Imagem da Logo e Nova Passagem Bíblica -->
     <header class="bg-amber-500 text-white p-4 flex flex-col items-center justify-center shadow-md">
         <img src="Conveniência_do_Seu_Paulo-LOGO_Photoroom.png" alt="Logo Conveniência do Seu Paulo" class="w-32 h-32 object-cover rounded-full border-4 border-white shadow-lg mb-2">
         <h1 class="text-xl font-bold">Conveniência do Seu Paulo</h1>
         <p class="text-xs italic text-center max-w-xs">"Assim, já não sou eu quem vive, mas Cristo vive em mim" - Gálatas 2,20</p>
     </header>
 
-    <!-- Menu Principal -->
     <main class="max-w-md mx-auto p-4 bg-white min-h-screen shadow-lg rounded-t-xl mt-2">
         
-        <!-- Categoria: Lanches -->
         <section class="mb-6">
             <h2 class="text-xl font-bold text-red-800 border-b-2 border-amber-500 pb-1 mb-3">🍔 Lanches</h2>
             <div class="space-y-3">
-                
-                <!-- Para desativar um item que acabou, basta colocar o código entre as tags de comentário como no exemplo abaixo:
-                <!-- 
-                <div onclick="openModal('PROD01', 'Coxinha', '5.00', 'coxinha.jpg')" class="flex items-center justify-between p-3 bg-gray-50 rounded-lg cursor-pointer hover:bg-gray-100 border border-gray-200">
-                    ...
-                </div>
-                -->
 
-                <div onclick="openModal('PROD01', 'Coxinha', '5.00', 'coxinha.jpg')" class="flex items-center justify-between p-3 bg-gray-50 rounded-lg cursor-pointer hover:bg-gray-100 border border-gray-200">
+                <div onclick="openModal('PROD01', 'Coxinha', '5.00', 'coxinha.jpeg')" class="flex items-center justify-between p-3 bg-gray-50 rounded-lg cursor-pointer hover:bg-gray-100 border border-gray-200">
                     <div class="flex items-center space-x-3">
                         <img src="coxinha.jpeg" class="w-16 h-16 object-cover rounded-md bg-gray-200" alt="Coxinha">
                         <div>
@@ -45,7 +34,7 @@
                     </div>
                 </div>
 
-                <div onclick="openModal('PROD02', 'Enroladinho', '5.00', 'enroladinho.jpg')" class="flex items-center justify-between p-3 bg-gray-50 rounded-lg cursor-pointer hover:bg-gray-100 border border-gray-200">
+                <div onclick="openModal('PROD02', 'Enroladinho', '5.00', 'Enroladinho.jpeg')" class="flex items-center justify-between p-3 bg-gray-50 rounded-lg cursor-pointer hover:bg-gray-100 border border-gray-200">
                     <div class="flex items-center space-x-3">
                         <img src="Enroladinho.jpeg" class="w-16 h-16 object-cover rounded-md bg-gray-200" alt="Enroladinho">
                         <div>
@@ -55,7 +44,7 @@
                     </div>
                 </div>
 
-                <div onclick="openModal('PROD03', 'Empada Doce', '5.00', 'empada.jpg')" class="flex items-center justify-between p-3 bg-gray-50 rounded-lg cursor-pointer hover:bg-gray-100 border border-gray-200">
+                <div onclick="openModal('PROD03', 'Empada Doce', '5.00', 'Empada_Doce.jpg')" class="flex items-center justify-between p-3 bg-gray-50 rounded-lg cursor-pointer hover:bg-gray-100 border border-gray-200">
                     <div class="flex items-center space-x-3">
                         <img src="Empada_Doce.jpg" class="w-16 h-16 object-cover rounded-md bg-gray-200" alt="Empada">
                         <div>
@@ -65,7 +54,7 @@
                     </div>
                 </div>
 
-                <div onclick="openModal('PROD04', 'Pastel de Forno', '5.00', 'pastel_forno.jpg')" class="flex items-center justify-between p-3 bg-gray-50 rounded-lg cursor-pointer hover:bg-gray-100 border border-gray-200">
+                <div onclick="openModal('PROD04', 'Pastel de Forno', '5.00', 'PASTEL_DE_FORNO.jpeg')" class="flex items-center justify-between p-3 bg-gray-50 rounded-lg cursor-pointer hover:bg-gray-100 border border-gray-200">
                     <div class="flex items-center space-x-3">
                         <img src="PASTEL_DE_FORNO.jpeg" class="w-16 h-16 object-cover rounded-md bg-gray-200" alt="Pastel de Forno">
                         <div>
@@ -75,7 +64,7 @@
                     </div>
                 </div>
 
-                <div onclick="openModal('PROD05', 'Cachorro Quente', '7.00', 'cachorro_quente.jpg')" class="flex items-center justify-between p-3 bg-gray-50 rounded-lg cursor-pointer hover:bg-gray-100 border border-gray-200">
+                <div onclick="openModal('PROD05', 'Cachorro Quente', '7.00', 'Cachorro_Quente.png')" class="flex items-center justify-between p-3 bg-gray-50 rounded-lg cursor-pointer hover:bg-gray-100 border border-gray-200">
                     <div class="flex items-center space-x-3">
                         <img src="Cachorro_Quente.png" class="w-16 h-16 object-cover rounded-md bg-gray-200" alt="Cachorro Quente">
                         <div>
@@ -85,7 +74,7 @@
                     </div>
                 </div>
 
-                <div onclick="openModal('PROD06', 'Mini Pizza', '4.00', 'mini_pizza.png')" class="flex items-center justify-between p-3 bg-gray-50 rounded-lg cursor-pointer hover:bg-gray-100 border border-gray-200">
+                <div onclick="openModal('PROD06', 'Mini Pizza', '4.00', 'Mini_Pizza.png')" class="flex items-center justify-between p-3 bg-gray-50 rounded-lg cursor-pointer hover:bg-gray-100 border border-gray-200">
                     <div class="flex items-center space-x-3">
                         <img src="Mini_Pizza.png" class="w-16 h-16 object-cover rounded-md bg-gray-200" alt="Mini Pizza">
                         <div>
@@ -95,7 +84,7 @@
                     </div>
                 </div>
 
-                <div onclick="openModal('PROD07', 'Bolo de chocolate', '5.00', 'bolo_chocolate.jpg')" class="flex items-center justify-between p-3 bg-gray-50 rounded-lg cursor-pointer hover:bg-gray-100 border border-gray-200">
+                <div onclick="openModal('PROD07', 'Bolo de chocolate', '5.00', 'bolo_de_chocolate.jpeg')" class="flex items-center justify-between p-3 bg-gray-50 rounded-lg cursor-pointer hover:bg-gray-100 border border-gray-200">
                     <div class="flex items-center space-x-3">
                         <img src="bolo_de_chocolate.jpeg" class="w-16 h-16 object-cover rounded-md bg-gray-200" alt="Bolo de chocolate">
                         <div>
@@ -105,7 +94,7 @@
                     </div>
                 </div>
 
-                <div onclick="openModal('PROD08', 'Açai', '7.00', 'acai.jpg')" class="flex items-center justify-between p-3 bg-gray-50 rounded-lg cursor-pointer hover:bg-gray-100 border border-gray-200">
+                <div onclick="openModal('PROD08', 'Açai', '7.00', 'AÇAÍ.jpeg')" class="flex items-center justify-between p-3 bg-gray-50 rounded-lg cursor-pointer hover:bg-gray-100 border border-gray-200">
                     <div class="flex items-center space-x-3">
                         <img src="AÇAÍ.jpeg" class="w-16 h-16 object-cover rounded-md bg-gray-200" alt="Açai">
                         <div>
@@ -118,12 +107,11 @@
             </div>
         </section>
 
-        <!-- Categoria: Bebidas -->
         <section class="mb-6">
             <h2 class="text-xl font-bold text-red-800 border-b-2 border-amber-500 pb-1 mb-3">🥤 Bebidas</h2>
             <div class="space-y-3">
 
-                <div onclick="openModal('PROD09', 'Água', '2.00', 'agua.jpg')" class="flex items-center justify-between p-3 bg-gray-50 rounded-lg cursor-pointer hover:bg-gray-100 border border-gray-200">
+                <div onclick="openModal('PROD09', 'Água', '2.00', 'ÁGUA.jpeg')" class="flex items-center justify-between p-3 bg-gray-50 rounded-lg cursor-pointer hover:bg-gray-100 border border-gray-200">
                     <div class="flex items-center space-x-3">
                         <img src="ÁGUA.jpeg" class="w-16 h-16 object-cover rounded-md bg-gray-200" alt="Água">
                         <div>
@@ -133,7 +121,7 @@
                     </div>
                 </div>
 
-                <div onclick="openModal('PROD10', 'Café grande', '2.00', 'cafe_grande.jpg')" class="flex items-center justify-between p-3 bg-gray-50 rounded-lg cursor-pointer hover:bg-gray-100 border border-gray-200">
+                <div onclick="openModal('PROD10', 'Café grande', '2.00', 'CAFÉ.jpeg')" class="flex items-center justify-between p-3 bg-gray-50 rounded-lg cursor-pointer hover:bg-gray-100 border border-gray-200">
                     <div class="flex items-center space-x-3">
                         <img src="CAFÉ.jpeg" class="w-16 h-16 object-cover rounded-md bg-gray-200" alt="Café grande">
                         <div>
@@ -143,7 +131,7 @@
                     </div>
                 </div>
 
-                <div onclick="openModal('PROD11', 'Café (médio)', '1.00', 'cafe_medio.jpg')" class="flex items-center justify-between p-3 bg-gray-50 rounded-lg cursor-pointer hover:bg-gray-100 border border-gray-200">
+                <div onclick="openModal('PROD11', 'Café (médio)', '1.00', 'Copo_de_cafe_medio.png')" class="flex items-center justify-between p-3 bg-gray-50 rounded-lg cursor-pointer hover:bg-gray-100 border border-gray-200">
                     <div class="flex items-center space-x-3">
                         <img src="Copo_de_cafe_medio.png" class="w-16 h-16 object-cover rounded-md bg-gray-200" alt="Café (médio)">
                         <div>
@@ -153,7 +141,7 @@
                     </div>
                 </div>
 
-                <div onclick="openModal('PROD12', 'Refrigerante', '1.00', 'refrigerante.jpg')" class="flex items-center justify-between p-3 bg-gray-50 rounded-lg cursor-pointer hover:bg-gray-100 border border-gray-200">
+                <div onclick="openModal('PROD12', 'Refrigerante', '1.00', 'REFRI.jpeg')" class="flex items-center justify-between p-3 bg-gray-50 rounded-lg cursor-pointer hover:bg-gray-100 border border-gray-200">
                     <div class="flex items-center space-x-3">
                         <img src="REFRI.jpeg" class="w-16 h-16 object-cover rounded-md bg-gray-200" alt="Refrigerante">
                         <div>
@@ -167,7 +155,6 @@
         </section>
     </main>
 
-    <!-- MODAL DO PRODUTO (Detalhes: Voltar ou Pedir) -->
     <div id="productModal" class="modal opacity-0 pointer-events-none fixed w-full h-full top-0 left-0 flex items-center justify-center z-50">
         <div class="modal-overlay absolute w-full h-full bg-black/50" onclick="closeModal()"></div>
         <div class="modal-container bg-white w-11/12 max-w-sm mx-auto rounded shadow-lg z-50 overflow-y-auto p-5">
@@ -182,7 +169,6 @@
         </div>
     </div>
 
-    <!-- BOTÃO FLUTUANTE DA SACOLA -->
     <div id="cartBar" class="fixed bottom-0 left-0 right-0 max-w-md mx-auto p-4 bg-white border-t border-gray-200 hidden shadow-2xl">
         <button onclick="toggleCartView()" class="w-full bg-amber-500 text-white p-3 rounded-lg font-bold flex justify-between items-center">
             <span>🛒 Ver Sacola (<span id="cartCount">0</span>)</span>
@@ -190,7 +176,6 @@
         </button>
     </div>
 
-    <!-- VISÃO DA SACOLA (Carrinho) -->
     <div id="cartView" class="fixed inset-0 bg-white z-40 max-w-md mx-auto p-4 hidden overflow-y-auto">
         <div class="flex justify-between items-center border-b pb-3 mb-4">
             <h2 class="text-2xl font-bold text-red-800">Sua Sacola</h2>
@@ -198,7 +183,6 @@
         </div>
         <div id="cartItems" class="space-y-3 mb-6"></div>
         
-        <!-- Formulário de Coleta de Dados -->
         <div class="border-t pt-4 space-y-3">
             <div>
                 <label class="block text-sm font-semibold text-gray-700">Seu Nome:</label>
@@ -212,9 +196,7 @@
         </div>
     </div>
 
-    <!-- LÓGICA EM JAVASCRIPT -->
     <script>
-        // Insira seu número de telefone no formato corrido (Exemplo adicionado abaixo)
         const TELEFONE_CAIXA = "5581995747250"; 
 
         let cart = [];
@@ -245,7 +227,7 @@
                     cart.push({ ...currentItem, quantity: 1 });
                 }
                 updateCartUI();
-                closeModal(); // Simula o "continuar pedindo" retornando ao menu
+                closeModal();
             }
         }
 
