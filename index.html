@@ -224,7 +224,7 @@
             currentItem = { id, name, price: parseFloat(price), img };
             document.getElementById('modalName').innerText = name;
             document.getElementById('modalPrice').innerText = `R$ ${parseFloat(price).toFixed(2).replace('.', ',')}`;
-            document.getElementById('modalImg').src = img;
+            document.getElementById('modalImg').setAttribute('src', img);
             
             const modal = document.getElementById('productModal');
             modal.classList.remove('opacity-0', 'pointer-events-none');
