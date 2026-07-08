@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cardápio Digital - Conveniência do Seu Paulo</title>
+    <!-- Tailwind CSS via CDN para estilização rápida e responsiva -->
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <style>
+        .modal { transition: opacity 0.25s ease; }
+        body { background-color: #8B0000; } /* Vermelho Escuro de São Paulo */
+    </style>
+</head>
+<body class="text-gray-800 min-h-screen pb-24">
+
+    <!-- Header com a Imagem da Logo e Nova Passagem Bíblica -->
+    <header class="bg-amber-500 text-white p-4 flex flex-col items-center justify-center shadow-md">
+        <img src="Conveniência_do_Seu_Paulo-LOGO_Photoroom.png" alt="Logo Conveniência do Seu Paulo" class="w-32 h-32 object-cover rounded-full border-4 border-white shadow-lg mb-2">
+        <h1 class="text-xl font-bold">Conveniência do Seu Paulo</h1>
+        <p class="text-xs italic text-center max-w-xs">"Assim, já não sou eu quem vive, mas Cristo vive em mim" - Gálatas 2,20</p>
+    </header>
+
+    <!-- Menu Principal -->
+    <main class="max-w-md mx-auto p-4 bg-white min-h-screen shadow-lg rounded-t-xl mt-2">
+        
+        <!-- Categoria: Lanches -->
+        <section class="mb-6">
+            <h2 class="text-xl font-bold text-red-800 border-b-2 border-amber-500 pb-1 mb-3">🍔 Lanches</h2>
+            <div class="space-y-3">
+                
+                <!-- Para desativar um item que acabou, basta colocar o código entre as tags de comentário como no exemplo abaixo:
+                <!-- 
+                <div onclick="openModal('PROD01', 'Coxinha', '5.00', 'coxinha.jpg')" class="flex items-center justify-between p-3 bg-gray-50 rounded-lg cursor-pointer hover:bg-gray-100 border border-gray-200">
+                    ...
+                </div>
+                -->
+
+                <div onclick="openModal('PROD01', 'Coxinha', '5.00', 'coxinha.jpg')" class="flex items-center justify-between p-3 bg-gray-50 rounded-lg cursor-pointer hover:bg-gray-100 border border-gray-200">
+                    <div class="flex items-center space-x-3">
+                        <img src="coxinha.jpeg" class="w-16 h-16 object-cover rounded-md bg-gray-200" alt="Coxinha">
+                        <div>
+                            <h3 class="font-semibold text-gray-900">Coxinha</h3>
+                            <p class="text-amber-600 font-bold">R$ 5,00</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div onclick="openModal('PROD02', 'Enroladinho', '5.00', 'enroladinho.jpg')" class="flex items-center justify-between p-3 bg-gray-50 rounded-lg cursor-pointer hover:bg-gray-100 border border-gray-200">
+                    <div class="flex items-center space-x-3">
+                        <img src="Enroladinho.jpeg" class="w-16 h-16 object-cover rounded-md bg-gray-200" alt="Enroladinho">
+                        <div>
+                            <h3 class="font-semibold text-gray-900">Enroladinho</h3>
+                            <p class="text-amber-600 font-bold">R$ 5,00</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div onclick="openModal('PROD03', 'Empada Doce', '5.00', 'empada.jpg')" class="flex items-center justify-between p-3 bg-gray-50 rounded-lg cursor-pointer hover:bg-gray-100 border border-gray-200">
+                    <div class="flex items-center space-x-3">
+                        <img src="Empada_Doce.jpg" class="w-16 h-16 object-cover rounded-md bg-gray-200" alt="Empada">
+                        <div>
+                            <h3 class="font-semibold text-gray-900">Empada Doce</h3>
+                            <p class="text-amber-600 font-bold">R$ 5,00</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div onclick="openModal('PROD04', 'Pastel de Forno', '5.00', 'pastel_forno.jpg')" class="flex items-center justify-between p-3 bg-gray-50 rounded-lg cursor-pointer hover:bg-gray-100 border border-gray-200">
+                    <div class="flex items-center space-x-3">
+                        <img src="PASTEL_DE_FORNO.jpeg" class="w-16 h-16 object-cover rounded-md bg-gray-200" alt="Pastel de Forno">
+                        <div>
+                            <h3 class="font-semibold text-gray-900">Pastel de Forno</h3>
+                            <p class="text-amber-600 font-bold">R$ 5,00</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div onclick="openModal('PROD05', 'Cachorro Quente', '7.00', 'cachorro_quente.jpg')" class="flex items-center justify-between p-3 bg-gray-50 rounded-lg cursor-pointer hover:bg-gray-100 border border-gray-200">
+                    <div class="flex items-center space-x-3">
+                        <img src="Cachorro_Quente.png" class="w-16 h-16 object-cover rounded-md bg-gray-200" alt="Cachorro Quente">
+                        <div>
+                            <h3 class="font-semibold text-gray-900">Cachorro Quente</h3>
+                            <p class="text-amber-600 font-bold">R$ 7,00</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div onclick="openModal('PROD06', 'Mini Pizza', '4.00', 'mini_pizza.jpg')" class="flex items-center justify-between p-3 bg-gray-50 rounded-lg cursor-pointer hover:bg-gray-100 border border-gray-200">
+                    <div class="flex items-center space-x-3">
+                        <img src="mini_pizza.jpg" class="w-16 h-16 object-cover rounded-md bg-gray-200" alt="Mini Pizza">
+                        <div>
+                            <h3 class="font-semibold text-gray-900">Mini Pizza</h3>
+                            <p class="text-amber-600 font-bold">R$ 4,00</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div onclick="openModal('PROD07', 'Bolo de chocolate', '5.00', 'bolo_chocolate.jpg')" class="flex items-center justify-between p-3 bg-gray-50 rounded-lg cursor-pointer hover:bg-gray-100 border border-gray-200">
+                    <div class="flex items-center space-x-3">
+                        <img src="bolo_de_chocolate.jpeg" class="w-16 h-16 object-cover rounded-md bg-gray-200" alt="Bolo de chocolate">
+                        <div>
+                            <h3 class="font-semibold text-gray-900">Bolo de chocolate</h3>
+                            <p class="text-amber-600 font-bold">R$ 5,00</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div onclick="openModal('PROD08', 'Açai', '7.00', 'acai.jpg')" class="flex items-center justify-between p-3 bg-gray-50 rounded-lg cursor-pointer hover:bg-gray-100 border border-gray-200">
+                    <div class="flex items-center space-x-3">
+                        <img src="AÇAÍ.jpeg" class="w-16 h-16 object-cover rounded-md bg-gray-200" alt="Açai">
+                        <div>
+                            <h3 class="font-semibold text-gray-900">Açai</h3>
+                            <p class="text-amber-600 font-bold">R$ 7,00</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Categoria: Bebidas -->
+        <section class="mb-6">
+            <h2 class="text-xl font-bold text-red-800 border-b-2 border-amber-500 pb-1 mb-3">🥤 Bebidas</h2>
+            <div class="space-y-3">
+
+                <div onclick="openModal('PROD09', 'Água', '2.00', 'agua.jpg')" class="flex items-center justify-between p-3 bg-gray-50 rounded-lg cursor-pointer hover:bg-gray-100 border border-gray-200">
+                    <div class="flex items-center space-x-3">
+                        <img src="ÁGUA.jpeg" class="w-16 h-16 object-cover rounded-md bg-gray-200" alt="Água">
+                        <div>
+                            <h3 class="font-semibold text-gray-900">Água</h3>
+                            <p class="text-amber-600 font-bold">R$ 2,00</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div onclick="openModal('PROD10', 'Café grande', '2.00', 'cafe_grande.jpg')" class="flex items-center justify-between p-3 bg-gray-50 rounded-lg cursor-pointer hover:bg-gray-100 border border-gray-200">
+                    <div class="flex items-center space-x-3">
+                        <img src="CAFÉ.jpeg" class="w-16 h-16 object-cover rounded-md bg-gray-200" alt="Café grande">
+                        <div>
+                            <h3 class="font-semibold text-gray-900">Café (grande)</h3>
+                            <p class="text-amber-600 font-bold">R$ 2,00</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div onclick="openModal('PROD11', 'Café (médio)', '1.00', 'cafe_medio.jpg')" class="flex items-center justify-between p-3 bg-gray-50 rounded-lg cursor-pointer hover:bg-gray-100 border border-gray-200">
+                    <div class="flex items-center space-x-3">
+                        <img src="Copo_de_cafe_medio.png" class="w-16 h-16 object-cover rounded-md bg-gray-200" alt="Café (médio)">
+                        <div>
+                            <h3 class="font-semibold text-gray-900">Café (médio)</h3>
+                            <p class="text-amber-600 font-bold">R$ 1,00</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div onclick="openModal('PROD12', 'Refrigerante', '1.00', 'refrigerante.jpg')" class="flex items-center justify-between p-3 bg-gray-50 rounded-lg cursor-pointer hover:bg-gray-100 border border-gray-200">
+                    <div class="flex items-center space-x-3">
+                        <img src="REFRI.jpeg" class="w-16 h-16 object-cover rounded-md bg-gray-200" alt="Refrigerante">
+                        <div>
+                            <h3 class="font-semibold text-gray-900">Refrigerante (copo)</h3>
+                            <p class="text-amber-600 font-bold">R$ 1,00</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+    </main>
+
+    <!-- MODAL DO PRODUTO (Detalhes: Voltar ou Pedir) -->
+    <div id="productModal" class="modal opacity-0 pointer-events-none fixed w-full h-full top-0 left-0 flex items-center justify-center z-50">
+        <div class="modal-overlay absolute w-full h-full bg-black/50" onclick="closeModal()"></div>
+        <div class="modal-container bg-white w-11/12 max-w-sm mx-auto rounded shadow-lg z-50 overflow-y-auto p-5">
+            <img id="modalImg" src="" class="w-full h-48 object-cover rounded-md mb-4 bg-gray-100" alt="Lanche">
+            <h2 id="modalName" class="text-xl font-bold text-gray-900"></h2>
+            <p id="modalPrice" class="text-lg text-amber-600 font-bold mb-6"></p>
+            
+            <div class="flex space-x-3">
+                <button onclick="closeModal()" class="w-1/2 bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-2 rounded">Voltar</button>
+                <button onclick="addToCartFromModal()" class="w-1/2 bg-amber-500 hover:bg-amber-600 text-white font-bold py-2 rounded">Pedir</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- BOTÃO FLUTUANTE DA SACOLA -->
+    <div id="cartBar" class="fixed bottom-0 left-0 right-0 max-w-md mx-auto p-4 bg-white border-t border-gray-200 hidden shadow-2xl">
+        <button onclick="toggleCartView()" class="w-full bg-amber-500 text-white p-3 rounded-lg font-bold flex justify-between items-center">
+            <span>🛒 Ver Sacola (<span id="cartCount">0</span>)</span>
+            <span id="cartTotal">R$ 0,00</span>
+        </button>
+    </div>
+
+    <!-- VISÃO DA SACOLA (Carrinho) -->
+    <div id="cartView" class="fixed inset-0 bg-white z-40 max-w-md mx-auto p-4 hidden overflow-y-auto">
+        <div class="flex justify-between items-center border-b pb-3 mb-4">
+            <h2 class="text-2xl font-bold text-red-800">Sua Sacola</h2>
+            <button onclick="toggleCartView()" class="text-gray-500 font-bold">X Fechar</button>
+        </div>
+        <div id="cartItems" class="space-y-3 mb-6"></div>
+        
+        <!-- Formulário de Coleta de Dados -->
+        <div class="border-t pt-4 space-y-3">
+            <div>
+                <label class="block text-sm font-semibold text-gray-700">Seu Nome:</label>
+                <input type="text" id="clientName" class="w-full border p-2 rounded" placeholder="Ex: Igor Rocha">
+            </div>
+            <div>
+                <label class="block text-sm font-semibold text-gray-700">Sua Equipe (Local de Entrega):</label>
+                <input type="text" id="clientTeam" class="w-full border p-2 rounded" placeholder="Ex: Secretaria, Cozinha">
+            </div>
+            <button onclick="checkout()" class="w-full bg-green-600 text-white font-bold p-3 rounded-lg mt-4">Enviar Pedido via WhatsApp</button>
+        </div>
+    </div>
+
+    <!-- LÓGICA EM JAVASCRIPT -->
+    <script>
+        // Insira seu número de telefone no formato corrido (Exemplo adicionado abaixo)
+        const TELEFONE_CAIXA = "5581995747250"; 
+
+        let cart = [];
+        let currentItem = null;
+
+        function openModal(id, name, price, img) {
+            currentItem = { id, name, price: parseFloat(price), img };
+            document.getElementById('modalName').innerText = name;
+            document.getElementById('modalPrice').innerText = `R$ ${parseFloat(price).toFixed(2).replace('.', ',')}`;
+            document.getElementById('modalImg').src = img;
+            
+            const modal = document.getElementById('productModal');
+            modal.classList.remove('opacity-0', 'pointer-events-none');
+        }
+
+        function closeModal() {
+            const modal = document.getElementById('productModal');
+            modal.classList.add('opacity-0', 'pointer-events-none');
+            currentItem = null;
+        }
+
+        function addToCartFromModal() {
+            if (currentItem) {
+                const existing = cart.find(item => item.id === currentItem.id);
+                if (existing) {
+                    existing.quantity += 1;
+                } else {
+                    cart.push({ ...currentItem, quantity: 1 });
+                }
+                updateCartUI();
+                closeModal(); // Simula o "continuar pedindo" retornando ao menu
+            }
+        }
+
+        function updateCartUI() {
+            const cartBar = document.getElementById('cartBar');
+            const cartCount = document.getElementById('cartCount');
+            const cartTotal = document.getElementById('cartTotal');
+            const cartItems = document.getElementById('cartItems');
+
+            if (cart.length === 0) {
+                cartBar.classList.add('hidden');
+                return;
+            }
+
+            cartBar.classList.remove('hidden');
+            
+            let totalItems = 0;
+            let totalPrice = 0;
+            cartItems.innerHTML = '';
+
+            cart.forEach(item => {
+                totalItems += item.quantity;
+                totalPrice += item.price * item.quantity;
+
+                cartItems.innerHTML += `
+                    <div class="flex justify-between items-center p-2 bg-gray-50 rounded border">
+                        <div>
+                            <h4 class="font-semibold">${item.name}</h4>
+                            <p class="text-sm text-gray-500">Qtd: ${item.quantity} x R$ ${item.price.toFixed(2).replace('.', ',')}</p>
+                        </div>
+                        <span class="font-bold">R$ ${(item.price * item.quantity).toFixed(2).replace('.', ',')}</span>
+                    </div>
+                `;
+            });
+
+            cartCount.innerText = totalItems;
+            cartTotal.innerText = `R$ ${totalPrice.toFixed(2).replace('.', ',')}`;
+        }
+
+        function toggleCartView() {
+            const cartView = document.getElementById('cartView');
+            cartView.classList.toggle('hidden');
+        }
+
+        function checkout() {
+            const name = document.getElementById('clientName').value;
+            const team = document.getElementById('clientTeam').value;
+
+            if (!name || !team) {
+                alert('Por favor, digite seu nome e sua equipe!');
+                return;
+            }
+
+            let text = `*Novo Pedido - Conveniência do Seu Paulo* 🌹\n\n`;
+            text += `*Cliente:* ${name}\n`;
+            text += `*Equipe/Local:* ${team}\n\n`;
+            text += `*Itens do Pedido:*\n`;
+            
+            let total = 0;
+            cart.forEach(item => {
+                text += `- ${item.quantity}x ${item.name} (R$ ${(item.price * item.quantity).toFixed(2).replace('.', ',')})\n`;
+                total += item.price * item.quantity;
+            });
+            text += `\n*Total estimado:* R$ ${total.toFixed(2).replace('.', ',')}\n`;
+            text += `_Pagamento na entrega (Pix, Dinheiro ou Cartão)_`;
+
+            const urlEncodedText = encodeURIComponent(text);
+            const whatsappUrl = `https://api.whatsapp.com/send?phone=${TELEFONE_CAIXA}&text=${urlEncodedText}`;
+
+            window.open(whatsappUrl, '_blank');
+            
+            cart = [];
+            updateCartUI();
+            toggleCartView();
+        }
+    </script>
+</body>
+</html>
