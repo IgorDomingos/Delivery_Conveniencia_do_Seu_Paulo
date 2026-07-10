@@ -24,12 +24,12 @@
             <h2 class="text-xl font-bold text-red-800 border-b-2 border-amber-500 pb-1 mb-3">🍲 PRATOS (SÓ HOJE!!!)</h2>
             <div class="space-y-3">
 
-                <div onclick="openModal('PRAT13', 'Cuscuz Recheado', '8.00', 'cuscuz.jpg')" class="flex items-center justify-between p-3 bg-gray-50 rounded-lg cursor-pointer hover:bg-gray-100 border border-gray-200">
+                <div onclick="openModal('PRAT13', 'Cuscuz Recheado', '10.00', 'cuscuz.jpg')" class="flex items-center justify-between p-3 bg-gray-50 rounded-lg cursor-pointer hover:bg-gray-100 border border-gray-200">
                     <div class="flex items-center space-x-3">
                         <img src="cuscuz.jpg" class="w-16 h-16 object-cover rounded-md bg-gray-200" alt="Cuscuz Recheado">
                         <div>
                             <h3 class="font-semibold text-gray-900">Cuscuz Recheado</h3>
-                            <p class="text-amber-600 font-bold">R$ 8,00</p>
+                            <p class="text-amber-600 font-bold">R$ 10,00</p>
                         </div>
                     </div>
                 </div>
@@ -39,7 +39,7 @@
                         <img src="macaxeira.jpg" class="w-16 h-16 object-cover rounded-md bg-gray-200" alt="Macaxeira">
                         <div>
                             <h3 class="font-semibold text-gray-900">Macaxeira</h3>
-                            <p class="text-amber-600 font-bold">R$ 8,00</p>
+                            <p class="text-amber-600 font-bold">R$ 10,00</p>
                         </div>
                     </div>
                 </div>
@@ -49,7 +49,7 @@
                         <img src="empadão.jpeg" class="w-16 h-16 object-cover rounded-md bg-gray-200" alt="Empadão">
                         <div>
                             <h3 class="font-semibold text-gray-900">Empadão</h3>
-                            <p class="text-amber-600 font-bold">R$ 7,00</p>
+                            <p class="text-amber-600 font-bold">R$ 10,00</p>
                         </div>
                     </div>
                 </div>
@@ -59,17 +59,17 @@
                         <img src="lasanha.png" class="w-16 h-16 object-cover rounded-md bg-gray-200" alt="Lasanha">
                         <div>
                             <h3 class="font-semibold text-gray-900">Lasanha</h3>
-                            <p class="text-amber-600 font-bold">R$ 8,00</p>
+                            <p class="text-amber-600 font-bold">R$ 10,00</p>
                         </div>
                     </div>
                 </div>
 
-                <div onclick="openModal('PRAT17', 'Munguzá', '8.00', 'munguza.jpeg')" class="flex items-center justify-between p-3 bg-gray-50 rounded-lg cursor-pointer hover:bg-gray-100 border border-gray-200">
+                <div onclick="openModal('PRAT17', 'Sopa', '8.00', 'sopa.jpg')" class="flex items-center justify-between p-3 bg-gray-50 rounded-lg cursor-pointer hover:bg-gray-100 border border-gray-200">
                     <div class="flex items-center space-x-3">
                         <img src="munguza.jpeg" class="w-16 h-16 object-cover rounded-md bg-gray-200" alt="Munguzá">
                         <div>
-                            <h3 class="font-semibold text-gray-900">Munguzá</h3>
-                            <p class="text-amber-600 font-bold">R$ 8,00</p>
+                            <h3 class="font-semibold text-gray-900">Sopa</h3>
+                            <p class="text-amber-600 font-bold">R$ 10,00</p>
                         </div>
                     </div>
                 </div>
@@ -151,8 +151,26 @@
                     </div>
                 </div>
                 
+            </div>
+        </section>
+
+        <section class="mb-6">
+            <h2 class="text-xl font-bold text-red-800 border-b-2 border-amber-500 pb-1 mb-3">🍰 Bolos</h2>
+            <div class="space-y-3">
+
+                <!-- Apagar bolo de noiva -->
+                <div onclick="openModal('BOLO01', 'Bolo de Noiva', '8.00', 'bolo_de_noiva.png')" class="flex items-center justify-between p-3 bg-gray-50 rounded-lg cursor-pointer hover:bg-gray-100 border border-gray-200">
+                    <div class="flex items-center space-x-3">
+                        <img src="bolo_de_noiva.png" class="w-16 h-16 object-cover rounded-md bg-gray-200" alt="Bolo de chocolate">
+                        <div>
+                            <h3 class="font-semibold text-gray-900">Bolo de Noiva</h3>
+                            <p class="text-amber-600 font-bold">R$ 8,00</p>
+                        </div>
+                    </div>
+                </div>
+                
                 <!-- Apagar bolo de chocolate -->
-                <div onclick="openModal('PROD08', 'Bolo de chocolate', '5.00', 'bolo_de_chocolate.jpeg')" class="flex items-center justify-between p-3 bg-gray-50 rounded-lg cursor-pointer hover:bg-gray-100 border border-gray-200">
+                <div onclick="openModal('BOLO02', 'Bolo de chocolate', '5.00', 'bolo_de_chocolate.jpeg')" class="flex items-center justify-between p-3 bg-gray-50 rounded-lg cursor-pointer hover:bg-gray-100 border border-gray-200">
                     <div class="flex items-center space-x-3">
                         <img src="bolo_de_chocolate.jpeg" class="w-16 h-16 object-cover rounded-md bg-gray-200" alt="Bolo de chocolate">
                         <div>
@@ -163,7 +181,7 @@
                 </div>
                 
                 <!--apagar Bolo de Macaxeira-->
-                <div onclick="openModal('PROD09', 'Bolo de Macaxeira', '5.00', 'bolo_de_macaxeira.jpg')" class="flex items-center justify-between p-3 bg-gray-50 rounded-lg cursor-pointer hover:bg-gray-100 border border-gray-200">
+                <div onclick="openModal('BOLO03', 'Bolo de Macaxeira', '5.00', 'bolo_de_macaxeira.jpg')" class="flex items-center justify-between p-3 bg-gray-50 rounded-lg cursor-pointer hover:bg-gray-100 border border-gray-200">
                     <div class="flex items-center space-x-3">
                         <img src="bolo_de_macaxeira.jpg" class="w-16 h-16 object-cover rounded-md bg-gray-200" alt="Bolo de chocolate">
                         <div>
@@ -174,7 +192,7 @@
                 </div>
                 
                 <!-- Apagar bolo de cenoura -->
-                <div onclick="openModal('PROD10', 'Bolo de Cenoura', '5.00', 'bolo_de_cenoura.jpeg')" class="flex items-center justify-between p-3 bg-gray-50 rounded-lg cursor-pointer hover:bg-gray-100 border border-gray-200">
+                <div onclick="openModal('BOLO04', 'Bolo de Cenoura', '5.00', 'bolo_de_cenoura.jpeg')" class="flex items-center justify-between p-3 bg-gray-50 rounded-lg cursor-pointer hover:bg-gray-100 border border-gray-200">
                     <div class="flex items-center space-x-3">
                         <img src="bolo_de_cenoura.jpeg" class="w-16 h-16 object-cover rounded-md bg-gray-200" alt="Bolo de chocolate">
                         <div>
@@ -183,15 +201,15 @@
                         </div>
                     </div>
                 </div>
-                
+
             </div>
         </section>
-
+        
         <section class="mb-6">
             <h2 class="text-xl font-bold text-red-800 border-b-2 border-amber-500 pb-1 mb-3">🥤 Bebidas</h2>
             <div class="space-y-3">
 
-                <div onclick="openModal('PROD09', 'Água', '2.00', 'ÁGUA.jpeg')" class="flex items-center justify-between p-3 bg-gray-50 rounded-lg cursor-pointer hover:bg-gray-100 border border-gray-200">
+                <div onclick="openModal('BEBD01', 'Água', '2.00', 'ÁGUA.jpeg')" class="flex items-center justify-between p-3 bg-gray-50 rounded-lg cursor-pointer hover:bg-gray-100 border border-gray-200">
                     <div class="flex items-center space-x-3">
                         <img src="ÁGUA.jpeg" class="w-16 h-16 object-cover rounded-md bg-gray-200" alt="Água">
                         <div>
@@ -201,7 +219,7 @@
                     </div>
                 </div>
 
-                <div onclick="openModal('PROD10', 'Café grande', '2.00', 'CAFÉ.jpeg')" class="flex items-center justify-between p-3 bg-gray-50 rounded-lg cursor-pointer hover:bg-gray-100 border border-gray-200">
+                <div onclick="openModal('BEBD02', 'Café grande', '2.00', 'CAFÉ.jpeg')" class="flex items-center justify-between p-3 bg-gray-50 rounded-lg cursor-pointer hover:bg-gray-100 border border-gray-200">
                     <div class="flex items-center space-x-3">
                         <img src="CAFÉ.jpeg" class="w-16 h-16 object-cover rounded-md bg-gray-200" alt="Café grande">
                         <div>
@@ -211,7 +229,7 @@
                     </div>
                 </div>
 
-                <div onclick="openModal('PROD11', 'Café (médio)', '1.00', 'Copo_de_cafe_medio.png')" class="flex items-center justify-between p-3 bg-gray-50 rounded-lg cursor-pointer hover:bg-gray-100 border border-gray-200">
+                <div onclick="openModal('BEBD03', 'Café (médio)', '1.00', 'Copo_de_cafe_medio.png')" class="flex items-center justify-between p-3 bg-gray-50 rounded-lg cursor-pointer hover:bg-gray-100 border border-gray-200">
                     <div class="flex items-center space-x-3">
                         <img src="Copo_de_cafe_medio.png" class="w-16 h-16 object-cover rounded-md bg-gray-200" alt="Café (médio)">
                         <div>
@@ -221,9 +239,9 @@
                     </div>
                 </div>
 
-                <div onclick="openModal('PROD12', 'Refrigerante', '1.00', 'REFRI.jpeg')" class="flex items-center justify-between p-3 bg-gray-50 rounded-lg cursor-pointer hover:bg-gray-100 border border-gray-200">
+                <div onclick="openModal('BEBD04', 'Refrigerante (Copo)', '1.00', 'REFRI.jpeg')" class="flex items-center justify-between p-3 bg-gray-50 rounded-lg cursor-pointer hover:bg-gray-100 border border-gray-200">
                     <div class="flex items-center space-x-3">
-                        <img src="REFRI.jpeg" class="w-16 h-16 object-cover rounded-md bg-gray-200" alt="Refrigerante">
+                        <img src="REFRI.jpeg" class="w-16 h-16 object-cover rounded-md bg-gray-200" alt="Refrigerante copo">
                         <div>
                             <h3 class="font-semibold text-gray-900">Refrigerante (copo)</h3>
                             <p class="text-amber-600 font-bold">R$ 1,00</p>
@@ -231,6 +249,28 @@
                     </div>
                 </div>
 
+                <!-- LATA DE REFRIGERANTE -->
+                <div onclick="openModal('BEBD05', 'Refrigerante (Lata)', '4.00', 'refri_lata.jpeg')" class="flex items-center justify-between p-3 bg-gray-50 rounded-lg cursor-pointer hover:bg-gray-100 border border-gray-200">
+                    <div class="flex items-center space-x-3">
+                        <img src="refri_lata.jpeg" class="w-16 h-16 object-cover rounded-md bg-gray-200" alt="Refrigerante lata">
+                        <div>
+                            <h3 class="font-semibold text-gray-900">Refrigerante (lata)</h3>
+                            <p class="text-amber-600 font-bold">R$ 4,00</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- SUCO -->
+                <div onclick="openModal('BEBD06', 'Copo de Suco', '1.00', 'suco.jpeg')" class="flex items-center justify-between p-3 bg-gray-50 rounded-lg cursor-pointer hover:bg-gray-100 border border-gray-200">
+                    <div class="flex items-center space-x-3">
+                        <img src="suco.jpeg" class="w-16 h-16 object-cover rounded-md bg-gray-200" alt="Suco">
+                        <div>
+                            <h3 class="font-semibold text-gray-900">Copo de Suco</h3>
+                            <p class="text-amber-600 font-bold">R$ 1,00</p>
+                        </div>
+                    </div>
+                </div>
+                
             </div>
         </section>
     </main>
