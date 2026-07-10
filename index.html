@@ -404,7 +404,7 @@
                 SABORES_SUCO.forEach(sabor => {
                     optionSelect.innerHTML += `<option value="${sabor}">${sabor}</option>`;
                 });
-            } else if (id.startsWith('COMB')) { // Combo Salgado + Lata
+            } else if (id.startsWith('COMB01')) { // Combo Salgado + Lata
                 selectionContainer.classList.remove('hidden');
                 selectionLabel.innerText = "Escolha o salgado do combo:";
                 optionSelect.innerHTML = "";
@@ -434,7 +434,7 @@
                     const sabor = optionSelect.value;
                     currentItem.name = `${currentItem.name} (${sabor})`;
                     currentItem.id = `${currentItem.id}_${sabor.toUpperCase()}`;
-                } else if (currentItem.id.startsWith('COMB')) {
+                } else if (currentItem.id.startsWith('COMB01')) {
                     const salgado = optionSelect.value;
                     currentItem.name = `${currentItem.name} (${salgado})`;
                     currentItem.id = `${currentItem.id}_${salgado.toUpperCase().replace(' ', '_')}`;
