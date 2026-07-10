@@ -93,6 +93,18 @@
                     </div>
                 </div>
 
+                <div onclick="openModal('COMB02', 'Combo Cachorro Quente + Lata', '10.00', 'combo_cachorro_quente.jpg')" class="flex items-center justify-between p-3 bg-amber-50 rounded-lg cursor-pointer hover:bg-amber-100 border-2 border-amber-500">
+                    <div class="flex items-center space-x-3">
+                        <img src="combo_cachorro_quente.jpg" class="w-16 h-16 object-cover rounded-md bg-gray-200" alt="Combo Cachorro Quente">
+                        <div>
+                            <h3 class="font-bold text-gray-900">Combo Cachorro Quente + Lata 🔥</h3>
+                            <p class="text-xs text-gray-600">Inclui 1 cachorro quente + 1 refri lata</p>
+                            <p class="text-amber-600 font-bold">R$ 10,00</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!--LANCHES--> 
                 <div onclick="openModal('PROD01', 'Coxinha', '5.00', 'coxinha.jpeg')" class="flex items-center justify-between p-3 bg-gray-50 rounded-lg cursor-pointer hover:bg-gray-100 border border-gray-200">
                     <div class="flex items-center space-x-3">
                         <img src="coxinha.jpeg" class="w-16 h-16 object-cover rounded-md bg-gray-200" alt="Coxinha">
@@ -165,6 +177,7 @@
                     </div>
                 </div>
 
+                <!-- MINI PIZZA CANCELADA
                 <div onclick="openModal('PROD06', 'Mini Pizza', '4.00', 'Mini_Pizza.png')" class="flex items-center justify-between p-3 bg-gray-50 rounded-lg cursor-pointer hover:bg-gray-100 border border-gray-200">
                     <div class="flex items-center space-x-3">
                         <img src="Mini_Pizza.png" class="w-16 h-16 object-cover rounded-md bg-gray-200" alt="Mini Pizza">
@@ -173,7 +186,7 @@
                             <p class="text-amber-600 font-bold">R$ 4,00</p>
                         </div>
                     </div>
-                </div>
+                </div>  -->
                 
                 <div onclick="openModal('PROD07', 'Açai', '7.00', 'AÇAÍ.jpeg')" class="flex items-center justify-between p-3 bg-gray-50 rounded-lg cursor-pointer hover:bg-gray-100 border border-gray-200">
                     <div class="flex items-center space-x-3">
@@ -368,7 +381,7 @@
         let currentItem = null;
 
         // Vetores com as opções que serão injetadas dinamicamente no Modal
-        const SABORES_SUCO = ["Laranja", "Uva", "Maracujá", "Limão"];
+        const SABORES_SUCO = ["Cajá", "Goiaba", "Manga"];
         
         // RESTRICÃO: Removidos Cachorro Quente, Empada Doce, Mini Pizza (R$4) e adicionada Empada de Frango
         const OPCOES_SALGADOS = ["Coxinha", "Enroladinho", "Empada de Frango", "Pastel de Forno"];
