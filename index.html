@@ -336,10 +336,29 @@
             <h2 id="modalName" class="text-xl font-bold text-gray-900"></h2>
             <p id="modalPrice" class="text-lg text-amber-600 font-bold mb-4"></p>
             
-            <!-- FEATURE: Elemento de seleção dinâmico para Suco ou Combo -->
+            <!-- Elemento de seleção dinâmico para Suco ou Combo (Dropdown) -->
             <div id="dynamicSelectionContainer" class="mb-6 hidden">
                 <label id="selectionLabel" class="block text-sm font-semibold text-gray-700 mb-2">Opção:</label>
                 <select id="productOption" class="w-full border p-2 rounded bg-gray-50 text-gray-900"></select>
+            </div>
+
+            <!-- NOVO CONTÊINER: Painel de Checkboxes para múltiplos acompanhamentos do Cachorro Quente -->
+            <div id="hotdogIngredientsContainer" class="mb-6 hidden">
+                <label class="block text-sm font-semibold text-gray-700 mb-2">Escolha os acompanhamentos:</label>
+                <div class="space-y-2 bg-gray-50 p-3 rounded border border-gray-200">
+                    <label class="flex items-center space-x-3 cursor-pointer">
+                        <input type="checkbox" name="hotdog_extra" value="Batata Palha" class="w-4 h-4 text-amber-500 border-gray-300 rounded">
+                        <span class="text-sm font-medium text-gray-900">Batata Palha</span>
+                    </label>
+                    <label class="flex items-center space-x-3 cursor-pointer">
+                        <input type="checkbox" name="hotdog_extra" value="Milho" class="w-4 h-4 text-amber-500 border-gray-300 rounded">
+                        <span class="text-sm font-medium text-gray-900">Milho</span>
+                    </label>
+                    <label class="flex items-center space-x-3 cursor-pointer">
+                        <input type="checkbox" name="hotdog_extra" value="Ervilha" class="w-4 h-4 text-amber-500 border-gray-300 rounded">
+                        <span class="text-sm font-medium text-gray-900">Ervilha</span>
+                    </label>
+                </div>
             </div>
             
             <div class="flex space-x-3">
@@ -389,8 +408,8 @@
         // Vetores com as opções que serão injetadas dinamicamente no Modal
         const SABORES_SUCO = ["Cajá", "Goiaba", "Manga"];
         
-        // RESTRICÃO: Removidos Cachorro Quente, Empada Doce, Mini Pizza (R$4) e adicionada Empada de Frango
-        const OPCOES_SALGADOS = ["Enroladinho", "Pastel de Forno"];
+        // RESTRICÃO ALTERADA: Removidos Cachorro Quente, Empada Doce, Mini Pizza (R$4) e adicionada Empada de Frango
+        const OPCOES_SALGADOS = ["Coxinha", "Enroladinho", "Empada de Frango", "Pastel de Forno"];
 
         function openModal(id, name, price, img) {
             currentItem = { id, name, price: parseFloat(price), img, optionSelected: "" };
@@ -402,23 +421,36 @@
             const selectionLabel = document.getElementById('selectionLabel');
             const optionSelect = document.getElementById('productOption');
             
-            // Lógica Condicional: Verifica o que foi clicado para montar o seletor
+            // Mapeamento do novo elemento de Checkboxes do HTML
+            const hotdogContainer = document.getElementById('hotdogIngredientsContainer');
+
+            // Reseta todas as marcações anteriores para o modal abrir limpo
+            const checkboxes = document.querySelectorAll('input[name="hotdog_extra"]');
+            checkboxes.forEach(cb => cb.checked = false);
+
+            // Regra de Negócio: Filtra o comportamento visual com base no ID
             if (id === 'BEBD06') { // Copo de Suco
                 selectionContainer.classList.remove('hidden');
+                hotdogContainer.classList.add('hidden');
                 selectionLabel.innerText = "Escolha o sabor do suco:";
                 optionSelect.innerHTML = "";
                 SABORES_SUCO.forEach(sabor => {
                     optionSelect.innerHTML += `<option value="${sabor}">${sabor}</option>`;
                 });
-            } else if (id.startsWith('COMB01')) { // Combo Salgado + Lata
+            } else if (id === 'COMB01') { // Combo Salgado + Lata
                 selectionContainer.classList.remove('hidden');
+                hotdogContainer.classList.add('hidden');
                 selectionLabel.innerText = "Escolha o salgado do combo:";
                 optionSelect.innerHTML = "";
                 OPCOES_SALGADOS.forEach(salgado => {
                     optionSelect.innerHTML += `<option value="${salgado}">${salgado}</option>`;
                 });
+            } else if (id === 'PROD05' || id === 'COMB02') { // Se for Cachorro Quente ou Combo de Cachorro Quente
+                selectionContainer.classList.add('hidden');
+                hotdogContainer.classList.remove('hidden'); // Ativa a seleção múltipla
             } else {
                 selectionContainer.classList.add('hidden');
+                hotdogContainer.classList.add('hidden');
             }
 
             const modal = document.getElementById('productModal');
@@ -435,15 +467,31 @@
             if (currentItem) {
                 const optionSelect = document.getElementById('productOption');
                 
-                // Processa a opção escolhida se o contêiner dinâmico estiver ativo
+                // Processamento de Dropdowns existentes (Suco e Combo de Salgado)
                 if (currentItem.id === 'BEBD06') {
                     const sabor = optionSelect.value;
                     currentItem.name = `${currentItem.name} (${sabor})`;
                     currentItem.id = `${currentItem.id}_${sabor.toUpperCase()}`;
-                } else if (currentItem.id.startsWith('COMB01')) {
+                } else if (currentItem.id === 'COMB01') {
                     const salgado = optionSelect.value;
                     currentItem.name = `${currentItem.name} (${salgado})`;
                     currentItem.id = `${currentItem.id}_${salgado.toUpperCase().replace(' ', '_')}`;
+                } 
+                // NOVA LÓGICA: Captura e concatena os Checkboxes do Cachorro Quente
+                else if (currentItem.id === 'PROD05' || currentItem.id === 'COMB02') {
+                    const checkedBoxes = document.querySelectorAll('input[name="hotdog_extra"]:checked');
+                    let acompanhamentos = [];
+                    checkedBoxes.forEach(cb => acompanhamentos.push(cb.value));
+                    
+                    if (acompanhamentos.length > 0) {
+                        const listaTexto = acompanhamentos.join(', ');
+                        currentItem.name = `${currentItem.name} (${listaTexto})`;
+                        // Concatena as escolhas no ID para diferenciar os pedidos na sacola
+                        currentItem.id = `${currentItem.id}_${acompanhamentos.join('_').toUpperCase()}`;
+                    } else {
+                        currentItem.name = `${currentItem.name} (Sem Acompanhamentos)`;
+                        currentItem.id = `${currentItem.id}_SEM_EXTRAS`;
+                    }
                 }
 
                 const existing = cart.find(item => item.id === currentItem.id);
